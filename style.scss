@@ -12,7 +12,8 @@
 img{
     width: 100%;
     height: auto;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 a{
     text-decoration: none;
@@ -24,9 +25,16 @@ a{
 
 header{
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 .logo{
     background-color: #FFF;
@@ -79,10 +87,15 @@ header{
     color:rgba(255, 255, 255, 1);
     border-color:rgba(0, 0, 0, 1);
     border-radius: 50px;
-    box-shadow: 0px 3px 10px 0px #899599;
+    -webkit-box-shadow: 0px 3px 10px 0px #899599;
+            box-shadow: 0px 3px 10px 0px #899599;
     cursor: pointer;
+    background:-webkit-gradient(linear, left top, left bottom, from($secondaire-color), to($primaire-color));
+    background:-o-linear-gradient($secondaire-color, $primaire-color);
     background:linear-gradient($secondaire-color, $primaire-color);
     &:hover{
+        background: -webkit-gradient(linear, left top, left bottom, from($primaire-color), to($secondaire-color));
+        background: -o-linear-gradient($primaire-color, $secondaire-color);
         background: linear-gradient($primaire-color, $secondaire-color);
     }
 }
@@ -109,13 +122,19 @@ nav{
         font-size: 16px;
     }
     & h2{
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         position:relative;
         left: 5%;
     }
     & li{
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        column-gap: 5px;
+        -webkit-column-gap: 5px;
+           -moz-column-gap: 5px;
+                column-gap: 5px;
         border-radius: 15px;
         width: 90%;
         height: 60px;
@@ -124,7 +143,8 @@ nav{
         margin: auto auto 20px auto;
         background-color: rgb(246, 246, 246);
         border-color:rgba(0, 0, 0, 1);
-        box-shadow: 0px 3px 10px 0px #dbdbdb;
+        -webkit-box-shadow: 0px 3px 10px 0px #dbdbdb;
+                box-shadow: 0px 3px 10px 0px #dbdbdb;
         cursor: pointer;
         &:hover{
             background-color: #F5EDFF;
@@ -155,15 +175,22 @@ h2{
 }
 .card-restaurant{
     position: relative;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     width: 90%;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin: auto auto 20px auto;
     border-radius: 20px;
     height: 220px;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
     transition: 0.5s;
     &:hover{
-        transform: scale(1.05);
+        -webkit-transform: scale(1.05);
+            -ms-transform: scale(1.05);
+                transform: scale(1.05);
     }
     & img{
         border-radius: 20px 20px 0px 0px;
@@ -202,7 +229,8 @@ footer{
     padding-left: 30px;
     padding-bottom: 20px;
     & img{
-        filter: invert(100%);
+        -webkit-filter: invert(100%);
+                filter: invert(100%);
         width: 100px;
         margin-top: 20px;
         margin-bottom: 20px;
@@ -237,13 +265,18 @@ footer{
     left: 0;
     overflow: hidden;
     height: 0;
-    transform-origin: bottom;
+    -webkit-transform-origin: bottom;
+        -ms-transform-origin: bottom;
+            transform-origin: bottom;
   }
   
   .fa-heart:hover::after {
     height: 100%;
-    animation: scale 1s linear;
-        transform-origin: bottom;
+    -webkit-animation: scale 1s linear;
+            animation: scale 1s linear;
+        -webkit-transform-origin: bottom;
+            -ms-transform-origin: bottom;
+                transform-origin: bottom;
         background: -webkit-linear-gradient($primaire-color,$secondaire-color);
         font-weight: bold;
         background-clip: text;
@@ -253,9 +286,16 @@ footer{
 /* Pages de resto */
 
 .header-alt{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     background-color: #FFF;
     & i{
         position: absolute;
@@ -278,22 +318,35 @@ footer{
 .card-menu .check-container{
     background-color: $tertiaire-color;
     position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     left: 100%;
     width: 70px;
     margin-top: -8px;
     height: 60px;
     border-radius: 0 15px 15px 0;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transition: -webkit-transform 500ms;
+    transition: -webkit-transform 500ms;
+    -o-transition: transform 500ms;
     transition: transform 500ms;
+    transition: transform 500ms, -webkit-transform 500ms;
     & .check{
         width: 23px;
         height: 23px;
         border-radius: 50%;
         background-color: #fff;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        animation:rotate 600ms linear;
+        -webkit-animation:rotate 600ms linear;
+                animation:rotate 600ms linear;
         & i{
             color: $tertiaire-color;
             font-size: 18px;
@@ -308,32 +361,57 @@ footer{
     & .card-menu{
         opacity: 0;
         position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        -webkit-box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         background-color: #FFF;
         width: 90%;
         height: 60px;
         gap: 5px;
         padding-left: 10px;
         padding-top: 8px;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         margin: auto 20px 20px auto;
         border-radius: 15px;
+        -webkit-transition: all 500ms ease-in-out;
+        -o-transition: all 500ms ease-in-out;
         transition: all 500ms ease-in-out;
         &:hover{
             .check-container{
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
+                -webkit-transition: -webkit-transform 500ms;
+                transition: -webkit-transform 500ms;
+                -o-transition: transform 500ms;
                 transition: transform 500ms;
-                transform: translateX(-70px);
+                transition: transform 500ms, -webkit-transform 500ms;
+                -webkit-transform: translateX(-70px);
+                    -ms-transform: translateX(-70px);
+                        transform: translateX(-70px);
             .check{
-                animation: check-rotate 500ms linear;
+                -webkit-animation: check-rotate 500ms linear;
+                        animation: check-rotate 500ms linear;
             }
         }
         & .prix{
+            -webkit-transition: -webkit-transform 400ms linear;
+            transition: -webkit-transform 400ms linear;
+            -o-transition: transform 400ms linear;
             transition: transform 400ms linear;
-            transform: translateX(-60px);
+            transition: transform 400ms linear, -webkit-transform 400ms linear;
+            -webkit-transform: translateX(-60px);
+                -ms-transform: translateX(-60px);
+                    transform: translateX(-60px);
             @media screen and (min-width:768px){
-                transform: translateX(-70px);
+                -webkit-transform: translateX(-70px);
+                    -ms-transform: translateX(-70px);
+                        transform: translateX(-70px);
             }
         }
         & h3{
@@ -392,7 +470,8 @@ footer{
             height: 47px;
             overflow: hidden;
             display: inline-block;
-            text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
+               text-overflow: ellipsis;
             white-space: nowrap;
         }
         & p{
@@ -404,7 +483,8 @@ footer{
             height: 45px;
             overflow: hidden;
             display: inline-block;
-            text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
+               text-overflow: ellipsis;
             white-space: nowrap;
             position: relative;
             top: 8px;
@@ -418,34 +498,44 @@ footer{
     }
 }
 .card-animation1{
-    animation: fadein 2s forwards;
+    -webkit-animation: fadein 2s forwards;
+            animation: fadein 2s forwards;
 }
 .card-animation2{
-    animation: fadein 2s 0.2s forwards;
+    -webkit-animation: fadein 2s 0.2s forwards;
+            animation: fadein 2s 0.2s forwards;
 }
 .card-animation3{
-    animation: fadein 2s 0.4s forwards;
+    -webkit-animation: fadein 2s 0.4s forwards;
+            animation: fadein 2s 0.4s forwards;
 }
 .card-animation4{
-    animation: fadein 2s 0.6s forwards;
+    -webkit-animation: fadein 2s 0.6s forwards;
+            animation: fadein 2s 0.6s forwards;
 }
 .card-animation5{
-    animation: fadein 2s 0.8s forwards;
+    -webkit-animation: fadein 2s 0.8s forwards;
+            animation: fadein 2s 0.8s forwards;
 }
 .card-animation6{
-    animation: fadein 2s 1s forwards;
+    -webkit-animation: fadein 2s 1s forwards;
+            animation: fadein 2s 1s forwards;
 }
 .card-animation7{
-    animation: fadein 2s 1.2s forwards;
+    -webkit-animation: fadein 2s 1.2s forwards;
+            animation: fadein 2s 1.2s forwards;
 }
 .card-animation8{
-    animation: fadein 2s 1.4s forwards;
+    -webkit-animation: fadein 2s 1.4s forwards;
+            animation: fadein 2s 1.4s forwards;
 }
 .card-animation9{
-    animation: fadein 2s 1.6s forwards;
+    -webkit-animation: fadein 2s 1.6s forwards;
+            animation: fadein 2s 1.6s forwards;
 }
 .card-animation10{
-    animation: fadein 2s 1.8s forwards;
+    -webkit-animation: fadein 2s 1.8s forwards;
+            animation: fadein 2s 1.8s forwards;
 }
 
 /*Mode Tablette et Desktop*/
@@ -453,10 +543,17 @@ footer{
 @media screen and (min-width:768px){
     nav{
     & ul{
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
         max-width: 90%;
         margin-left: 5%;
         }
@@ -475,23 +572,41 @@ section h2{
     width: 30%
 }
 .restaurant-container{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
 }
 .card-restaurant{
     width: 45%;
 }
 .menu-alt{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 .section-alt{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     & .entire-menu{
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         width: 100%;
     }
     & .btn{
@@ -555,7 +670,8 @@ section h2{
     border: 6px solid transparent;
     border-top-color: $primaire-color;
     border-bottom-color: $secondaire-color;
-    animation: spin 1s linear infinite;
+    -webkit-animation: spin 1s linear infinite;
+            animation: spin 1s linear infinite;
 }
 
 .loader-double:after{
@@ -570,10 +686,13 @@ section h2{
     border-top-color: $tertiaire-color;
     border-bottom-color: $tertiaire-color;
     opacity: 0.6;
-    animation: spin-reverse 2s linear infinite;
+    -webkit-animation: spin-reverse 2s linear infinite;
+            animation: spin-reverse 2s linear infinite;
 }
 
 #loader-out{
-    animation: loader-out 3s ease-in-out;
-    animation-fill-mode: forwards;
+    -webkit-animation: loader-out 3s ease-in-out;
+            animation: loader-out 3s ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
 }
