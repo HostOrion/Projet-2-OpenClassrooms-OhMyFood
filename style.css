@@ -85,6 +85,7 @@
 img {
   width: 100%;
   height: auto;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 
@@ -99,8 +100,15 @@ a {
 
 header {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -155,11 +163,16 @@ header {
   color: rgb(255, 255, 255);
   border-color: rgb(0, 0, 0);
   border-radius: 50px;
+  -webkit-box-shadow: 0px 3px 10px 0px #899599;
   box-shadow: 0px 3px 10px 0px #899599;
   cursor: pointer;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
+  background: -o-linear-gradient(#FF79DA, #9356DC);
   background: linear-gradient(#FF79DA, #9356DC);
 }
 .btn:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+  background: -o-linear-gradient(#9356DC, #FF79DA);
   background: linear-gradient(#9356DC, #FF79DA);
 }
 
@@ -186,12 +199,18 @@ nav i {
   font-size: 16px;
 }
 nav h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: relative;
   left: 5%;
 }
 nav li {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-column-gap: 5px;
+  -moz-column-gap: 5px;
   column-gap: 5px;
   border-radius: 15px;
   width: 90%;
@@ -201,6 +220,7 @@ nav li {
   margin: auto auto 20px auto;
   background-color: rgb(246, 246, 246);
   border-color: rgb(0, 0, 0);
+  -webkit-box-shadow: 0px 3px 10px 0px #dbdbdb;
   box-shadow: 0px 3px 10px 0px #dbdbdb;
   cursor: pointer;
 }
@@ -234,15 +254,22 @@ h2 {
 
 .card-restaurant {
   position: relative;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   width: 90%;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   margin: auto auto 20px auto;
   border-radius: 20px;
   height: 220px;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
   transition: 0.5s;
 }
 .card-restaurant:hover {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
   transform: scale(1.05);
 }
 .card-restaurant img {
@@ -284,26 +311,30 @@ footer {
   padding-bottom: 20px;
 }
 footer img {
+  -webkit-filter: invert(100%);
   filter: invert(100%);
   width: 100px;
   margin-top: 20px;
   margin-bottom: 20px;
   cursor: pointer;
 }
-footer li {
+footer a {
+  display: flex;
+  color: white;
   margin-bottom: 5px;
   width: 200px;
   cursor: pointer;
 }
-footer li:hover {
+footer a:hover {
   color: #9356DC;
 }
-footer li i {
+footer a i {
   width: 15px;
   height: 15px;
   padding-right: 30px;
 }
 
+/* Animation Coeur */
 .fa-heart {
   bottom: 28px;
   left: 85%;
@@ -319,12 +350,17 @@ footer li i {
   left: 0;
   overflow: hidden;
   height: 0;
+  -webkit-transform-origin: bottom;
+  -ms-transform-origin: bottom;
   transform-origin: bottom;
 }
 
 .fa-heart:hover::after {
   height: 100%;
+  -webkit-animation: scale 1s linear;
   animation: scale 1s linear;
+  -webkit-transform-origin: bottom;
+  -ms-transform-origin: bottom;
   transform-origin: bottom;
   background: -webkit-linear-gradient(#9356DC, #FF79DA);
   font-weight: bold;
@@ -335,8 +371,15 @@ footer li i {
 
 /* Pages de resto */
 .header-alt {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
   flex-direction: row-reverse;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   background-color: #FFF;
 }
@@ -362,22 +405,35 @@ footer li i {
 .card-menu .check-container {
   background-color: #99E2D0;
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   left: 100%;
   width: 70px;
   margin-top: -8px;
   height: 60px;
   border-radius: 0 15px 15px 0;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-transition: -webkit-transform 500ms;
+  transition: -webkit-transform 500ms;
+  -o-transition: transform 500ms;
   transition: transform 500ms;
+  transition: transform 500ms, -webkit-transform 500ms;
 }
 .card-menu .check-container .check {
   width: 23px;
   height: 23px;
   border-radius: 50%;
   background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-animation: rotate 600ms linear;
   animation: rotate 600ms linear;
 }
 .card-menu .check-container .check i {
@@ -394,7 +450,10 @@ footer li i {
 .section-alt .card-menu {
   opacity: 0;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   background-color: #FFF;
   width: 90%;
@@ -402,25 +461,47 @@ footer li i {
   gap: 5px;
   padding-left: 10px;
   padding-top: 8px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   margin: auto 20px 20px auto;
   border-radius: 15px;
+  -webkit-transition: all 500ms ease-in-out;
+  -o-transition: all 500ms ease-in-out;
   transition: all 500ms ease-in-out;
 }
 .section-alt .card-menu:hover .check-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-transition: -webkit-transform 500ms;
+  transition: -webkit-transform 500ms;
+  -o-transition: transform 500ms;
   transition: transform 500ms;
+  transition: transform 500ms, -webkit-transform 500ms;
+  -webkit-transform: translateX(-70px);
+  -ms-transform: translateX(-70px);
   transform: translateX(-70px);
 }
 .section-alt .card-menu:hover .check-container .check {
+  -webkit-animation: check-rotate 500ms linear;
   animation: check-rotate 500ms linear;
 }
 .section-alt .card-menu:hover .prix {
+  -webkit-transition: -webkit-transform 400ms linear;
+  transition: -webkit-transform 400ms linear;
+  -o-transition: transform 400ms linear;
   transition: transform 400ms linear;
+  transition: transform 400ms linear, -webkit-transform 400ms linear;
+  -webkit-transform: translateX(-60px);
+  -ms-transform: translateX(-60px);
   transform: translateX(-60px);
 }
 @media screen and (min-width: 768px) {
   .section-alt .card-menu:hover .prix {
+    -webkit-transform: translateX(-70px);
+    -ms-transform: translateX(-70px);
     transform: translateX(-70px);
   }
 }
@@ -481,6 +562,7 @@ footer li i {
   height: 47px;
   overflow: hidden;
   display: inline-block;
+  -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -493,6 +575,7 @@ footer li i {
   height: 45px;
   overflow: hidden;
   display: inline-block;
+  -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
   white-space: nowrap;
   position: relative;
@@ -500,57 +583,75 @@ footer li i {
 }
 .section-alt .card-menu .prix {
   position: relative;
+  width: 50px;
   left: 85%;
   bottom: 10px;
   font-weight: 500;
 }
 
 .card-animation1 {
+  -webkit-animation: fadein 2s forwards;
   animation: fadein 2s forwards;
 }
 
 .card-animation2 {
+  -webkit-animation: fadein 2s 0.2s forwards;
   animation: fadein 2s 0.2s forwards;
 }
 
 .card-animation3 {
+  -webkit-animation: fadein 2s 0.4s forwards;
   animation: fadein 2s 0.4s forwards;
 }
 
 .card-animation4 {
+  -webkit-animation: fadein 2s 0.6s forwards;
   animation: fadein 2s 0.6s forwards;
 }
 
 .card-animation5 {
+  -webkit-animation: fadein 2s 0.8s forwards;
   animation: fadein 2s 0.8s forwards;
 }
 
 .card-animation6 {
+  -webkit-animation: fadein 2s 1s forwards;
   animation: fadein 2s 1s forwards;
 }
 
 .card-animation7 {
+  -webkit-animation: fadein 2s 1.2s forwards;
   animation: fadein 2s 1.2s forwards;
 }
 
 .card-animation8 {
+  -webkit-animation: fadein 2s 1.4s forwards;
   animation: fadein 2s 1.4s forwards;
 }
 
 .card-animation9 {
+  -webkit-animation: fadein 2s 1.6s forwards;
   animation: fadein 2s 1.6s forwards;
 }
 
 .card-animation10 {
+  -webkit-animation: fadein 2s 1.8s forwards;
   animation: fadein 2s 1.8s forwards;
 }
 
 /*Mode Tablette et Desktop*/
 @media screen and (min-width: 768px) {
   nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -ms-flex-pack: distribute;
     justify-content: space-around;
     max-width: 90%;
     margin-left: 5%;
@@ -569,23 +670,41 @@ footer li i {
     width: 30%;
   }
   .restaurant-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -ms-flex-pack: distribute;
     justify-content: space-around;
   }
   .card-restaurant {
     width: 45%;
   }
   .menu-alt {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
   }
   .section-alt {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
   .section-alt .entire-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     width: 100%;
   }
@@ -648,6 +767,7 @@ footer li i {
   border: 6px solid transparent;
   border-top-color: #9356DC;
   border-bottom-color: #FF79DA;
+  -webkit-animation: spin 1s linear infinite;
   animation: spin 1s linear infinite;
 }
 
@@ -663,11 +783,14 @@ footer li i {
   border-top-color: #99E2D0;
   border-bottom-color: #99E2D0;
   opacity: 0.6;
+  -webkit-animation: spin-reverse 2s linear infinite;
   animation: spin-reverse 2s linear infinite;
 }
 
 #loader-out {
+  -webkit-animation: loader-out 3s ease-in-out;
   animation: loader-out 3s ease-in-out;
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
 

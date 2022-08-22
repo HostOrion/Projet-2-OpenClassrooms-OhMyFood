@@ -236,7 +236,9 @@ footer{
         margin-bottom: 20px;
         cursor: pointer;
     }
-    & li{
+    & a{
+        display: flex;
+        color: white;
         margin-bottom: 5px;
         width: 200px;
         cursor: pointer;
@@ -250,6 +252,9 @@ footer{
         }
     }
 }
+
+/* Animation Coeur */
+
 .fa-heart {
     bottom: 28px;
     left: 85%;
@@ -491,6 +496,7 @@ footer{
         }    
         & .prix{
             position: relative;
+            width: 50px;
             left: 85%;
             bottom: 10px;
             font-weight: 500;
