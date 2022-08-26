@@ -433,8 +433,6 @@ footer a i {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-animation: rotate 600ms linear;
-  animation: rotate 600ms linear;
 }
 .card-menu .check-container .check i {
   color: #99E2D0;
@@ -485,8 +483,8 @@ footer a i {
   transform: translateX(-70px);
 }
 .section-alt .card-menu:hover .check-container .check {
-  -webkit-animation: check-rotate 500ms linear;
-  animation: check-rotate 500ms linear;
+  -webkit-animation: rotate 500ms linear;
+  animation: rotate 500ms linear;
 }
 .section-alt .card-menu:hover .prix {
   -webkit-transition: -webkit-transform 400ms linear;
