@@ -350,8 +350,6 @@ footer{
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        -webkit-animation:rotate 600ms linear;
-                animation:rotate 600ms linear;
         & i{
             color: $tertiaire-color;
             font-size: 18px;
@@ -400,8 +398,8 @@ footer{
                     -ms-transform: translateX(-70px);
                         transform: translateX(-70px);
             .check{
-                -webkit-animation: check-rotate 500ms linear;
-                        animation: check-rotate 500ms linear;
+                -webkit-animation: rotate 500ms linear;
+                        animation: rotate 500ms linear;
             }
         }
         & .prix{
